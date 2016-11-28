@@ -1,136 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.ajmeer.myapplicationui.MainActivity"
-    android:background="@color/highlighted_text_material_dark"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
-    android:minHeight="70dp"
-    android:minWidth="70dp"
-    android:nestedScrollingEnabled="false"
-    android:textAlignment="center">
+    tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Car details"
-        android:id="@+id/car"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/imageView"
+        android:text="Find nearest parking"
+        android:textSize="25dp"
+        android:id="@+id/textView"
+        tools:context=".MainActivity"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="112dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/s"
+        android:layout_marginTop="24dp"
+        tools:context=".MainActivity"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:onClick="OnClick"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        tools:context=".MainActivity"
         android:singleLine="false"
-        android:textColor="@color/bright_foreground_inverse_material_light"
-        android:textIsSelectable="false"
-        android:textStyle="normal"
-        android:layout_alignParentBottom="false"
-        android:layout_alignParentRight="false"
-        android:layout_alignWithParentIfMissing="false"
-        android:background="@android:color/holo_green_light"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_alignTop="@+id/imageView"
+        android:text="Available Parking"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="247dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/DisplayGPS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/calc"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="39dp"
-        android:layout_toEndOf="@+id/imageView"
-        android:layout_alignParentStart="true">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/calc"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/plate"
-            android:layout_alignWithParentIfMissing="false"
-            android:text="Plate No"
-            android:textColor="@color/material_grey_600"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:inputType="text"
-            android:textIsSelectable="false" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/phone"
-            android:text="Phone"
-            android:textColor="@color/switch_thumb_disabled_material_dark"
-            android:inputType="phone"
-            android:layout_below="@+id/plate"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:paddingTop="20dp" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/cartype"
-            android:text="Car Type"
-            android:textColor="@color/switch_thumb_disabled_material_dark"
-            android:layout_below="@+id/phone"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:paddingTop="20dp"
-            android:inputType="text" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/name"
-            android:text="Name"
-            android:textColor="@color/switch_thumb_disabled_material_dark"
-            android:inputType="textPersonName|text"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/cartype"
-            android:paddingTop="20dp" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/time"
-            android:text="Time of arrival"
-            android:textColor="@color/switch_thumb_disabled_material_dark"
-            android:inputType="time"
-            android:paddingTop="20dp"
-            android:layout_below="@+id/name"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Next"
-            android:id="@+id/next"
-            android:textColor="@color/bright_foreground_material_dark"
-            android:background="@android:color/holo_green_dark"
-            android:clickable="true"
-            android:layout_marginEnd="24dp"
-            android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@+id/cancel"
-            android:layout_marginBottom="13dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:id="@+id/cancel"
-            android:layout_marginEnd="44dp"
-            android:textColor="#ffffff"
-            android:background="@android:color/holo_green_dark"
-            android:clickable="true"
-            android:layout_alignTop="@+id/next"
-            android:layout_alignParentEnd="true" />
-
-    </RelativeLayout>
 
 </RelativeLayout>
